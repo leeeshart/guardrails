@@ -180,7 +180,7 @@ class UnusualPromptV2(Validator):
                 ``UNUSUAL_PROMPT_THRESHOLD`` environment variable, or ``0.5``.
             on_fail: The policy to enact when validation fails.
         """
-        if not 0.0 < threshold < 1.0:
+        if not 0.0 <= threshold <= 1.0:
             raise ValueError(f"threshold must be in (0, 1), got {threshold!r}")
         super().__init__(on_fail=on_fail, threshold=threshold)
         self._threshold = threshold

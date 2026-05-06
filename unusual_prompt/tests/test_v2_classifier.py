@@ -192,10 +192,7 @@ class TestUnusualPromptV2Init:
         from unusual_prompt.validator.v2_classifier import UnusualPromptV2
 
         with pytest.raises(ValueError, match="threshold"):
-            UnusualPromptV2(threshold=0.0)
-
-        with pytest.raises(ValueError, match="threshold"):
-            UnusualPromptV2(threshold=1.0)
+            UnusualPromptV2(threshold=-0.1)
 
         with pytest.raises(ValueError, match="threshold"):
             UnusualPromptV2(threshold=1.5)

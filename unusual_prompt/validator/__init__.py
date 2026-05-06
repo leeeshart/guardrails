@@ -7,7 +7,7 @@ guardrails installation (e.g. in the model training script).
 """
 
 
-def __getattr__(name: str):  # noqa: ANN001
+def __getattr__(name: str):
     if name == "UnusualPrompt":
         from .main import UnusualPrompt  # noqa: PLC0415
 
